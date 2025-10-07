@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fsPromises = require('fs').promises;
 const DatabaseInterface = require('./database-interface.js').DatabaseInterface;
 
 class Filesystem extends DatabaseInterface {
@@ -11,11 +11,17 @@ class Filesystem extends DatabaseInterface {
   }
 
   saveAllCodes(allCodes) {
-    fs.writeFileSync(path, allCodes);
+    return fsPromises.writeFile(path, allCodes, (err) => {
+      if (err) throw err;
+      console.log('The file has been saved!');
+    });
   }
 
   loadAllCodes() {
-    return JSON.parse(fs.readFileSync(this.path));
+    return fsPromises.readFile(this.path, (err, _data) => {
+      if (err) throw err;
+      console.log('The file has been read!');
+    })
   }
 }
 
