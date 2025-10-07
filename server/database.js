@@ -1,4 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
+const DatabaseInterface = require('./database-interface.js');
 
 const DATABASE_NAME = 'thunderbird';
 const COLLECTION_NAME = 'allcodes';
@@ -7,7 +8,7 @@ const COLLECTION_NAME = 'allcodes';
  * A wrapper around MongoDB. Exposes methods to save and query saved codes
  * to/from the database at the given path.
  */
-class Database {
+class Database extends DatabaseInterface {
   constructor() {
     this.database_ = null;
   }

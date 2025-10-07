@@ -7,7 +7,14 @@ const DatabaseConfig = require('./databaseconfig.js').DatabaseConfig;
 
 const app = express();
 const server = require('http').createServer(app);
-const database = new Database();
+let database;
+
+if (DatabaseConfig.type === 'local') {
+  database = new Filesystem();
+}
+else {
+  database = new Database();
+}
 
 app
     .use(express.static(path.join(__dirname, '../client')))
