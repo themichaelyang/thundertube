@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 
 const Database = require('./database.js').Database;
+const Filesystem = require('./filesystem.js').Filesystem;
 const DatabaseConfig = require('./databaseconfig.js').DatabaseConfig;
 
 const app = express();

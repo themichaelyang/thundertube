@@ -1,5 +1,5 @@
 const fs = require('fs');
-const DatabaseInterface = require('./database-interface.js');
+const DatabaseInterface = require('./database-interface.js').DatabaseInterface;
 
 class Filesystem extends DatabaseInterface {
   constructor() {}
