@@ -11,7 +11,7 @@ class Filesystem extends DatabaseInterface {
   }
 
   saveAllCodes(allCodes) {
-    return fsPromises.writeFile(path, allCodes, (err) => {
+    return fsPromises.writeFile(this.path, allCodes, (err) => {
       if (err) throw err;
       console.log('The file has been saved!');
     });
