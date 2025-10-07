@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const DatabaseInterface = require('./database-interface.js');
+const DatabaseInterface = require('./database-interface.js').DatabaseInterface;
 
 const DATABASE_NAME = 'thunderbird';
 const COLLECTION_NAME = 'allcodes';
