@@ -11,3 +11,5 @@ class DatabaseInterface {
     throw Error('loadAllCodes is undefined');
   }
 }
+
+exports.DatabaseInterface = DatabaseInterface;

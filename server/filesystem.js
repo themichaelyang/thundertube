@@ -16,3 +16,5 @@ class Filesystem extends DatabaseInterface {
     return JSON.parse(fs.readFileSync(this.path));
   }
 }
+
+exports.Filesystem = Filesystem;
