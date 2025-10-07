@@ -10,6 +10,7 @@ const COLLECTION_NAME = 'allcodes';
  */
 class Database extends DatabaseInterface {
   constructor() {
+    super();
     this.database_ = null;
   }
 

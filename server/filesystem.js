@@ -2,7 +2,9 @@ const fs = require('fs');
 const DatabaseInterface = require('./database-interface.js').DatabaseInterface;
 
 class Filesystem extends DatabaseInterface {
-  constructor() {}
+  constructor() {
+    super();
+  }
 
   async connect(path) {
     this.path = path;
